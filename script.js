@@ -46,13 +46,22 @@ $(document).ready(() => {
     e.preventDefault();
 
     const nuevoMail = $("#nuevoMail").val().trim();
+    const nuevotelefono = $("#nuevotelefono").val().trim();
 
     if (nuevoMail === "") {
       alert("Por favor, ingresa un correo válido");
       return;
     }
 
+    if (nuevotelefono === "") {
+      alert("Por favor, ingresa un número de teléfono válido");
+      return;
+    }
+
+    
+
     alert("Correo actualizado a: " + nuevoMail);
+    alert("Número de teléfono actualizado a: " + nuevotelefono);
   });
 
   // === Manejo de eliminar cuenta ===
