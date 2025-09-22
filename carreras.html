@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carreras — Roadmap & match</title>
+  <script src="auth.js"></script>
+  <script>
+    if(!Auth.isLoggedIn()){ window.location.replace('login.html'); }
+  </script>
+  <style>
+    :root{ --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --primary:#38bdf8; --border:#1f2937; }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b1025,var(--bg)); color:var(--text); }
+    header, footer{ padding:1rem; border-bottom:1px solid var(--border) }
+    header{ display:flex; justify-content:space-between; align-items:center; }
+    footer{ border-top:1px solid var(--border); border-bottom:none; text-align:center; color:var(--muted) }
+    .wrap{ max-width:900px; margin:0 auto; padding:0 1.5rem 1.5rem }
+    h1{ margin:.2rem 0 0; font-size:1.6rem }
+    a.back{ color:var(--primary); text-decoration:none }
+    .btn{ display:inline-block; margin-top:1rem; text-decoration:none; font-weight:700;
+      padding:.65rem 1rem; border-radius:12px; border:1px solid transparent; }
+    .btn.outline{ background:transparent; color:var(--primary); border:1px solid var(--primary); text-transform:uppercase; }
+    .btn.outline:hover{ background:rgba(56,189,248,.12); }
+    .card{ background:linear-gradient(180deg,#0f172a,#0b1220); border:1px solid var(--border);
+      border-radius:16px; padding:1.25rem; margin-top:1rem; box-shadow:0 8px 24px rgba(2,6,23,.35); }
+    label{ display:block; margin:.25rem 0 .5rem; color:var(--muted) }
+    select{ width:100%; padding:.7rem .9rem; border-radius:12px; border:1px solid var(--border);
+      background:#0f172a; color:#e5e7eb; outline:none; }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem }
+    .results{ margin-top:1rem; display:grid; gap:.75rem }
+    .card-sm{ border:1px solid var(--border); border-radius:12px; padding:.9rem; background:#0f172a; }
+    .card-sm h3{ margin:.1rem 0 .3rem; font-size:1rem }
+    .error{ color:#fca5a5; margin-top:.5rem }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="padding:0">
+      <a class="back" href="index.html">← Volver</a>
+      <h1>Carreras</h1>
+    </div>
+    <div class="wrap" style="padding:0; text-align:right">
+      <button id="logoutBtn" class="btn outline">CERRAR SESIÓN</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="row">
+        <div>
+          <label for="categoria">Elegí una categoría</label>
+          <select id="categoria" disabled>
+            <option value="" selected>— Cargando opciones… —</option>
+          </select>
+        </div>
+
+        <div id="subWrapper" style="display:none;">
+          <label for="subcategoria" id="subLabel">Opciones</label>
+          <select id="subcategoria"></select>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap">
+        <button class="btn outline" id="limpiar" type="button">LIMPIAR</button>
+      </div>
+
+      <div id="results" class="results"></div>
+      <section id="detalle" class="results" style="margin-top:1.25rem;"></section>
+
+      <p id="error" class="error" style="display:none;"></p>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="year"></span> Roadmap &amp; match</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('logoutBtn')?.addEventListener('click', () => {
+      Auth.logout(); window.location.replace('login.html');
+    });
+
+    const categoriaEl   = document.getElementById('categoria');
+    const subWrapperEl  = document.getElementById('subWrapper');
+    const subLabelEl    = document.getElementById('subLabel');
+    const subcategoriaEl= document.getElementById('subcategoria');
+    const errorEl       = document.getElementById('error');
+    const limpiarEl     = document.getElementById('limpiar');
+    const detalleEl     = document.getElementById('detalle');
+
+    let DATA = null;
+    let currentCat = null;
+
+    function fillSelect(select, items, placeholder = "— Seleccionar —") {
+      select.innerHTML = "";
+      const opt = document.createElement('option');
+      opt.value = ""; opt.textContent = placeholder; opt.disabled = true; opt.selected = true;
+      select.appendChild(opt);
+      items.forEach(({ id, nombre }) => {
+        const o = document.createElement('option');
+        o.value = id; o.textContent = nombre;
+        select.appendChild(o);
+      });
+    }
+
+    function clearDetalle(){ detalleEl.innerHTML = ""; }
+
+    function renderDetalleFor(subId){
+      clearDetalle();
+      const det = DATA?.detalles?.[subId];
+      if(!det) return;
+
+      const header = document.createElement('div');
+      const h2 = document.createElement('h2');
+      h2.textContent = det.titulo || "";
+      const p = document.createElement('p');
+      p.innerHTML = (det.parrafo || "").replace(/\n/g, "<br>");
+      header.appendChild(h2);
+      header.appendChild(p);
+      detalleEl.appendChild(header);
+
+      (det.ofertas || []).forEach(of => {
+        const card = document.createElement('div');
+        card.className = 'card-sm';
+
+        const title = document.createElement('h3');
+        title.textContent = of.carrera || 'Carrera';
+
+        const inst = document.createElement('p');
+        inst.innerHTML = `<b>Institución:</b> ${of.institucion || '-'}`;
+
+        const dur = document.createElement('p');
+        dur.innerHTML = `<b>Duración:</b> ${of.duracion || '-'}`;
+
+        const mod = document.createElement('p');
+        mod.innerHTML = `<b>Modalidad:</b> ${of.modalidad || '-'}`;
+
+        const tipo = document.createElement('p');
+        tipo.innerHTML = `<b>Tipo:</b> ${of.tipo || '-'}`;
+
+        const link = document.createElement('p');
+        const a = document.createElement('a');
+        a.href = of.url || '#';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = of.url ? 'Link al sitio oficial' : '—';
+        a.style.color = 'var(--primary)';
+        link.appendChild(a);
+
+        card.appendChild(title);
+        card.appendChild(inst);
+        card.appendChild(dur);
+        card.appendChild(mod);
+        card.appendChild(tipo);
+        card.appendChild(link);
+
+        detalleEl.appendChild(card);
+      });
+    }
+
+    async function loadData(){
+      try{
+        const res = await fetch('carreras.json', { cache: 'no-store' });
+        if(!res.ok) throw new Error('No se pudo cargar carreras.json');
+        DATA = await res.json();
+
+        const categorias = (DATA.categorias || []).map(({ id, nombre }) => ({ id, nombre }));
+        fillSelect(categoriaEl, categorias, "— Seleccionar —");
+        categoriaEl.disabled = false;
+
+      }catch(err){
+        console.error(err);
+        errorEl.textContent = 'Error al cargar datos. Verificá que "carreras.json" esté en la misma carpeta.';
+        errorEl.style.display = 'block';
+      }
+    }
+
+    categoriaEl.addEventListener('change', () => {
+      const key = categoriaEl.value;
+      currentCat = (DATA?.categorias || []).find(c => c.id === key);
+
+      clearDetalle();
+      if(!currentCat) return;
+
+      if (Array.isArray(currentCat.subopciones) && currentCat.subopciones.length > 0) {
+        subLabelEl.textContent = currentCat.id === 'superior'
+          ? "Opciones de Carreras de Pregrado"
+          : "Opciones de Carreras de Grado";
+        subWrapperEl.style.display = "block";
+        fillSelect(subcategoriaEl, currentCat.subopciones);
+      } else {
+        subWrapperEl.style.display = "none";
+      }
+    });
+
+    subcategoriaEl.addEventListener('change', () => {
+      const selId = subcategoriaEl.value;
+      const item = currentCat?.subopciones?.find(s => s.id === selId);
+      if (item) renderDetalleFor(item.id);
+      else clearDetalle();
+    });
+
+    limpiarEl.addEventListener('click', () => {
+      categoriaEl.value = "";
+      subcategoriaEl.innerHTML = "";
+      subWrapperEl.style.display = "none";
+      clearDetalle();
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+{
+  "categorias": [
+    {
+      "id": "superior",
+      "nombre": "Carreras de pregrado",
+      "subopciones": [
+        { "id": "analisis-sistemas", "nombre": "Análisis de sistemas", "descripcion": "Formación técnica para analizar, diseñar y optimizar sistemas de información." },
+        { "id": "desarrollo-software", "nombre": "Desarrollo de software", "descripcion": "Diseño, construcción y mantenimiento de aplicaciones." },
+        { "id": "ciencia-datos-ia", "nombre": "Ciencia de datos e inteligencia artificial", "descripcion": "Análisis de datos y modelos de aprendizaje automático." },
+        { "id": "videojuegos", "nombre": "Desarrollo de videojuegos", "descripcion": "Producción de juegos: programación, arte y diseño." }
+      ]
+    },
+    {
+      "id": "grado",
+      "nombre": "Carreras de grado",
+      "subopciones": [
+        { "id": "ing-sistemas", "nombre": "Ingeniería en sistemas", "descripcion": "Ingeniería orientada a grandes sistemas de software y hardware." },
+        { "id": "ing-informatica", "nombre": "Ingeniería en informática", "descripcion": "Diseño y gestión de soluciones informáticas complejas." },
+        { "id": "lic-sistemas", "nombre": "Licenciatura en sistemas", "descripcion": "Gestión y desarrollo de sistemas de información." },
+        { "id": "lic-ciencia-datos-ia", "nombre": "Licenciatura en ciencia de datos e inteligencia artificial", "descripcion": "Modelado predictivo, IA y análisis avanzado." },
+        { "id": "lic-desarrollo-software", "nombre": "Licenciatura en desarrollo de software", "descripcion": "Ingeniería de software aplicada a productos modernos." },
+        { "id": "lic-ciberseguridad", "nombre": "Licenciatura en ciberseguridad", "descripcion": "Protección de sistemas, redes y datos." },
+        { "id": "lic-videojuegos", "nombre": "Licenciatura en desarrollo de videojuegos", "descripcion": "Producción integral de videojuegos." }
+      ]
+    }
+  ],
+  "detalles": {
+    "desarrollo-software": {
+      "titulo": "Desarrollo de software",
+      "parrafo": "El técnico en Desarrollo de Software estará capacitado para producir artefactos de software, lo que comprende su diseño detallado, construcción reutilizando elementos existentes o programándolos enteramente, y verificación unitaria, así como su depuración, optimización y mantenimiento. Este técnico podrá desempeñarse en organizaciones de diversos tipos: empresas que realizan desarrollo de software por encargo de organizaciones locales o extranjeras, que proveen software junto con otros servicios de asesoramiento y consultoría, y, en menor número, que desarrollan sus propios productos de software para vender en el país o en el exterior.\n\nEste perfil profesional tiene una alta demanda en el Sector IT, por lo que representa una excelente oportunidad para insertarse en un mercado laboral dinámico y en franco crecimiento.",
+      "ofertas": [
+        {
+          "carrera": "Tecnicatura Superior en Desarrollo de Software",
+          "institucion": "IFTS 16",
+          "duracion": "2 años y medio",
+          "modalidad": "Híbrida",
+          "tipo": "Pública",
+          "url": "https://ifts16.com/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Desarrollo de Software",
+          "institucion": "IFTS 29",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual sincrónica",
+          "tipo": "Pública",
+          "url": "https://ifts29.edu.ar/plan-de-desarrollo-de-software/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Desarrollo de Software de Simuladores",
+          "institucion": "IFTS 5",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual sincrónica",
+          "tipo": "Pública",
+          "url": "https://ifts5.com/carrera/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Desarrollo de Software",
+          "institucion": "ISTEA",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual sincrónica",
+          "tipo": "Privada",
+          "url": "https://www.istea.edu.ar/tecnicatura-superior-en-desarrollo-de-software"
+        },
+        {
+          "carrera": "Tecnicatura Universitaria en Desarrollo de Software",
+          "institucion": "UADE",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual sincrónica",
+          "tipo": "Privada",
+          "url": "https://www.uade.edu.ar/facultad-de-ingenieria-y-ciencias-exactas/tecnicatura-universitaria-en-desarrollo-de-software/"
+        }
+      ]
+    },
+    "analisis-sistemas": {
+      "titulo": "Análisis de sistemas",
+      "parrafo": "El técnico en Análisis de Sistemas estará capacitado para estudiar, relevar, analizar y modelar sistemas de información, contribuyendo a su diseño y optimización. Su formación le permite desempeñarse en equipos de desarrollo de software, consultoría tecnológica, gestión de proyectos y áreas de soporte de sistemas. Es una carrera de rápida salida laboral en el sector IT.",
+      "ofertas": [
+        {
+          "carrera": "Tecnicatura Superior en Análisis de Sistemas",
+          "institucion": "IFTS 16",
+          "duracion": "2 años y medio",
+          "modalidad": "Híbrida",
+          "tipo": "Pública",
+          "url": "https://ifts16.com/"
+        },
+        {
+          "carrera": "Analista Universitario en Sistemas",
+          "institucion": "UP",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual, Presencial o Híbrida",
+          "tipo": "Privada",
+          "url": "https://www.palermo.edu/ingenieria/analista-universitario-en-sistemas/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Análisis de Sistemas",
+          "institucion": "IFTS 9",
+          "duracion": "2 años y medio",
+          "modalidad": "Presencial",
+          "tipo": "Pública",
+          "url": "https://ifts9.com.ar/#carreras"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Análisis de Sistemas",
+          "institucion": "ISTIC",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual sincrónica",
+          "tipo": "Privada",
+          "url": "https://www.iiconcepcion.edu.ar/istic-sistemas"
+        }
+      ]
+    },
+    "ciencia-datos-ia": {
+      "titulo": "Ciencia de datos e inteligencia artificial",
+      "parrafo": "Estarás calificado/a para pensar con criterio estadístico situaciones de trabajo que involucren una amplia cantidad de datos, comprendiendo el ciclo de trabajo de la Ciencia de Datos dentro de una organización o para un cliente particular. Esta capacitación forma parte de la oferta educativa del sector.",
+      "ofertas": [
+        {
+          "carrera": "Tecnicatura Superior en Ciencia de Datos e inteligencia artificial",
+          "institucion": "IFTS 12",
+          "duracion": "2 años y medio",
+          "modalidad": "Presencial",
+          "tipo": "Pública",
+          "url": "https://ifts12online.com.ar/mod/page/view.php?id=36776"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Ciencia de Datos e inteligencia artificial",
+          "institucion": "ISPC",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual",
+          "tipo": "Pública",
+          "url": "https://www.ispc.edu.ar/tecnicatura-datos/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Ciencia de Datos e inteligencia artificial",
+          "institucion": "Instituto Tomás Alva Edison",
+          "duracion": "2 años y medio",
+          "modalidad": "Presencial y Virtual",
+          "tipo": "Privada",
+          "url": "https://superior.fundacionedison.org.ar/tscd/"
+        },
+        {
+          "carrera": "Tecnicatura Superior en Ciencia de Datos e inteligencia artificial",
+          "institucion": "INSET",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual",
+          "tipo": "Pública",
+          "url": "https://inset.edu.ar/carreras-inset/tecnicatura-superior-en-ciencia-de-datos-e-inteligencia-artificial/"
+        }
+      ]
+    },
+    "videojuegos": {
+      "titulo": "Desarrollo de videojuegos",
+      "parrafo": "Se espera que la persona egresada de la Tecnicatura en Desarrollo de Videojuegos haya adquirido conocimientos, habilidades y actitudes relativas a: el conocimiento y dominio de softwares necesarios para ser un/a profesional en el diseño y desarrollo de videojuegos; la comprensión y análisis de la experiencia de la persona jugadora y del videojuego; la comprensión del procedimiento teórico y práctico que implica el proceso de creación de un arte conceptual (concept artist); y el diseño de todas las fases de un videojuego, desde la idea inicial hasta el lanzamiento final.",
+      "ofertas": [
+        {
+          "carrera": "Tecnicatura en Programación de Videojuegos con Unreal Engine, Unity y Godot",
+          "institucion": "Image Campus",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual",
+          "tipo": "Privada",
+          "url": "https://www.imagecampus.edu.ar/carreras-titulo-oficial"
+        },
+        {
+          "carrera": "Tecnicatura Universitaria en Desarrollo y Producción de Videojuegos",
+          "institucion": "UTN FRBA",
+          "duracion": "2 años y medio",
+          "modalidad": "Virtual",
+          "tipo": "Pública",
+          "url": "https://sceu.frba.utn.edu.ar/e-learning/detalle/carrera/3401/tecnicatura-universitaria-en-desarrollo-y-produccion-de-videojuegos"
+        },
+        {
+          "carrera": "Tecnicatura Universitaria en Programación de Videojuegos",
+          "institucion": "UNAHUR",
+          "duracion": "2 años y medio",
+          "modalidad": "Presencial y Virtual",
+          "tipo": "Pública",
+          "url": "https://unahur.edu.ar/tecnicatura-universitaria-en-programacion-de-videojuegos/"
+        },
+        {
+          "carrera": "Tecnicatura Universitaria en Desarrollo y Producción de Videojuegos",
+          "institucion": "UPC",
+          "duracion": "2 años y medio",
+          "modalidad": "Presencial y Virtual",
+          "tipo": "Pública",
+          "url": "https://www.upc.edu.ar/carreras/tecnicatura-universitaria-en-desarrollo-y-produccion-de-videojuegos/"
+        }
+      ]
+    }
+  }
+}

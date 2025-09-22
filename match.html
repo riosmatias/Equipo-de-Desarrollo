@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Match — Roadmap & match</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="auth.js"></script>
+  <script>
+    if(!Auth.isLoggedIn()){ window.location.replace('login.html'); }
+  </script>
+</head>
+<body>
+  <header class="site-header" style="display:flex;justify-content:space-between;align-items:center;padding:1rem">
+    <a href="index.html" class="back" style="color:var(--primary);text-decoration:none">← Volver</a>
+    <h1 style="margin:0">Match de preferencias</h1>
+    <button id="logoutBtn" class="btn outline">CERRAR SESIÓN</button>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Contanos tus preferencias</h2>
+      <p class="muted">Pronto vas a poder elegir intereses, modalidad, duración y más para ver carreras que hacen match con vos.</p>
+      <a class="btn outline" href="index.html">IR AL INICIO</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Roadmap &amp; match</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('logoutBtn')?.addEventListener('click', () => {
+      Auth.logout(); window.location.replace('login.html');
+    });
+  </script>
+</body>
+</html>
