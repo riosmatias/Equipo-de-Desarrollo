@@ -1,58 +1,99 @@
 $(document).ready(() => {
-  // Manejar el envío del formulario
+  // === Manejo del formulario de perfil ===
   $("#profileForm").on("submit", (e) => {
-    e.preventDefault() // Evita que la página se recargue
+    e.preventDefault(); // Evita recargar la página
 
-    const usuario = $("#usuario").val()
-    const nombre = $("#nombre").val()
-    const apellido = $("#apellido").val()
+    const usuario = $("#usuario").val();
+    const nombre = $("#nombre").val();
+    const apellido = $("#apellido").val();
 
-    // Validar que todos los campos estén llenos
     if (usuario.trim() === "" || nombre.trim() === "" || apellido.trim() === "") {
-      alert("Por favor, completa todos los campos")
-      return
+      alert("Por favor, completa todos los campos");
+      return;
     }
 
-    mostrarMensajeExito()
+    mostrarMensajeExito();
 
     console.log("Datos del formulario:", {
       usuario: usuario,
       nombre: nombre,
       apellido: apellido,
-    })
-  })
+    });
+  });
 
+  // === Manejo de la imagen de perfil ===
   $("#imageUpload").on("change", (e) => {
-    const file = e.target.files[0]
+    const file = e.target.files[0];
 
     if (file) {
-      // Validar que sea una imagen
       if (!file.type.startsWith("image/")) {
-        alert("Por favor, selecciona un archivo de imagen válido")
-        return
+        alert("Por favor, selecciona un archivo de imagen válido");
+        return;
       }
 
-      // Crear un FileReader para leer el archivo
-      const reader = new FileReader()
+      const reader = new FileReader();
 
       reader.onload = (e) => {
-        // Mostrar la imagen seleccionada
-        $("#profileImage").attr("src", e.target.result)
-      }
+        $("#profileImage").attr("src", e.target.result);
+      };
 
-      // Leer el archivo como URL de datos
-      reader.readAsDataURL(file)
+      reader.readAsDataURL(file);
     }
-  })
-})
+  });
 
+  // === Manejo del formulario de configuración ===
+  $("#configForm").on("submit", (e) => {
+    e.preventDefault();
+
+    const nuevoMail = $("#nuevoMail").val().trim();
+
+    if (nuevoMail === "") {
+      alert("Por favor, ingresa un correo válido");
+      return;
+    }
+
+    alert("Correo actualizado a: " + nuevoMail);
+  });
+
+  // === Manejo de eliminar cuenta ===
+  $("#btnEliminarCuenta").on("click", () => {
+    const confirmacion = confirm("¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.");
+
+    if (confirmacion) {
+      alert("Tu cuenta ha sido eliminada 🚫");
+      // Aquí podrías poner una llamada AJAX al servidor para eliminar la cuenta
+    }
+  });
+
+  // === Manejo de navegación lateral ===
+  $(".sidebar a").on("click", function (e) {
+    e.preventDefault();
+
+    $(".sidebar a").removeClass("active");
+    $(this).addClass("active");
+
+    const texto = $(this).text().trim();
+
+    if (texto === "Mi Perfil") {
+      $("#seccion-perfil").removeClass("d-none");
+      $("#seccion-configuracion").addClass("d-none");
+    } else if (texto === "Configuración") {
+      $("#seccion-configuracion").removeClass("d-none");
+      $("#seccion-perfil").addClass("d-none");
+    } else if (texto === "Cerrar Sesión") {
+      alert("EN DESARROLLO");
+    }
+  });
+});
+
+// === Funciones auxiliares ===
 function mostrarMensajeExito() {
-  $("#successMessage").removeClass("d-none").addClass("d-block")
+  $("#successMessage").removeClass("d-none").addClass("d-block");
 }
 
 function limpiarFormulario() {
-  $("#profileForm")[0].reset()
-  $("#successMessage").removeClass("d-block").addClass("d-none")
-  $("#profileImage").attr("src", "https://via.placeholder.com/150x150/cccccc/666666?text=Usuario")
-  $("#imageUpload").val("")
+  $("#profileForm")[0].reset();
+  $("#successMessage").removeClass("d-block").addClass("d-none");
+  $("#profileImage").attr("src", "https://via.placeholder.com/150x150/cccccc/666666?text=Usuario");
+  $("#imageUpload").val("");
 }
