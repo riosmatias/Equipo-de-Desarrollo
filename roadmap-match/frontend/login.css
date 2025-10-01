@@ -1,0 +1,57 @@
+/* ===== Estilos específicos para login ===== */
+
+.auth-wrap {
+  max-width: 420px;
+  margin: 4rem auto;
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, .35);
+}
+
+.auth-wrap h1 { margin: .2rem 0 1rem; font-size: 1.4rem; }
+
+/* Campos */
+.field { display: flex; flex-direction: column; gap: .4rem; margin: .8rem 0; }
+.field label { color: var(--muted); }
+.field input {
+  padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--border);
+  background: #0f172a; color: var(--text); outline: none;
+}
+
+/* Hint */
+.hint { display: none; color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.field:focus-within .hint { display: block; }
+
+/* Acciones */
+.actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-top: 1rem; }
+.link { color: var(--primary); cursor: pointer; text-decoration: none; }
+
+.btn.text{
+  background: transparent; border: none; color: var(--primary);
+  font-weight: 700; cursor: pointer; padding: .25rem .5rem; border-radius: 8px;
+}
+.btn.text:hover{ background: rgba(56,189,248,.12); }
+
+.error { color: #fca5a5; margin-top: .5rem; min-height: 1.2rem; }
+.center { text-align: center; margin-top: .8rem; color: var(--muted); }
+
+/* ===== Modal ===== */
+.modal{
+  position: fixed; inset: 0; background: rgba(2,6,23,.6);
+  display: none; place-items: center; padding: 1rem; z-index: 1000;
+}
+.modal.open{ display: grid; }
+
+.modal-content{
+  width: min(480px, 96vw);
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 16px 48px rgba(2,6,23,.45);
+}
+
+.modal-content h2{ margin: 0 0 .6rem 0; font-size: 1.2rem; }
+.modal-actions{ justify-content: flex-end; }

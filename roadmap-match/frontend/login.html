@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingresar — Roadmap & match</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="auth-wrap">
+      <h1 id="formTitle">Ingresá</h1>
+
+      <form id="authForm" novalidate>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            autocomplete="email"
+            inputmode="email"
+          />
+          <small class="hint" id="emailHint" aria-live="polite" style="display:none;">
+            Ingresá un correo válido (ej: nombre@dominio.com).
+          </small>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+            aria-describedby="passwordHint"
+          />
+          <small class="hint" id="passwordHint">
+            Debe ser <b>alfanumérica</b> de <b>8 a 12</b> caracteres (solo para registrarte).
+          </small>
+        </div>
+
+        <div class="actions">
+          <button class="btn outline" type="submit" id="submitBtn">INGRESAR</button>
+          <a class="link" id="toggleMode" href="#">Crear cuenta</a>
+        </div>
+
+        <p class="error" id="msg" role="alert"></p>
+
+        <!-- Nuevo: botón para recuperar contraseña -->
+        <p class="center">
+          <button type="button" class="btn text" id="forgotBtn">OLVIDÉ MI CONTRASEÑA</button>
+        </p>
+
+        <p class="center"><a class="link" href="index.html">Volver al inicio</a></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Modal de restablecimiento -->
+  <div class="modal" id="resetModal" aria-hidden="true" role="dialog" aria-labelledby="resetTitle">
+    <div class="modal-content">
+      <h2 id="resetTitle">Restablecer contraseña</h2>
+      <form id="resetForm" novalidate>
+        <div class="field">
+          <label for="resetEmail">Correo electrónico</label>
+          <input id="resetEmail" type="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="resetPass">Nueva contraseña</label>
+          <input id="resetPass" type="password" placeholder="8–12 alfanumérica" required minlength="8" maxlength="12" />
+          <small class="hint">Alfanumérica, 8 a 12 caracteres.</small>
+        </div>
+        <div class="field">
+          <label for="resetPass2">Confirmar contraseña</label>
+          <input id="resetPass2" type="password" placeholder="Repetir contraseña" required minlength="8" maxlength="12" />
+        </div>
+
+        <p class="error" id="resetMsg" role="alert"></p>
+
+        <div class="actions modal-actions">
+          <button type="button" class="btn outline" id="cancelReset">CANCELAR</button>
+          <button type="submit" class="btn outline" id="doReset">RESTABLECER</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
