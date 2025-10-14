@@ -1,0 +1,24 @@
+.rankingEmpleabilidad {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  /* gap: 2rem; */
+}
+
+.div_header {
+  display: flex;
+  justify-content: space-around;
+  /* text-align: center; */
+  align-items: center;
+  flex: 0.2;
+}
+
+.div_header button {
+  align-self: auto;
+}
+
+.div_header img {
+  width: 32px;
+}

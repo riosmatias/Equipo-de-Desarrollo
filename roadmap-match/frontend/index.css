@@ -1,0 +1,15 @@
+.imagen_user{
+    width: 32px;
+}
+
+.div_header{
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
+    align-items: center;
+    flex: 0.2;
+}
+
+.div_header button{
+    align-self: auto;
+}
