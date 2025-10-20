@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
+import profileRoutes from "./routes/profile.js";
 
 const app = express();
 
@@ -12,7 +13,10 @@ app.use(express.json());
 
 app.get("/", (_, res) => res.json({ ok: true }));
 
+app.use("/uploads", express.static("uploads"));
+
 app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
 
 const port = process.env.PORT || 4000;
 

@@ -1,0 +1,240 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --card2: #3b5489;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #38bdf8;
+  --border: #1f2937;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #0b1025, var(--bg));
+  color: var(--text);
+}
+header,
+footer {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  text-align: center;
+  color: var(--muted);
+}
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+}
+h1 {
+  margin: 0.2rem 0 0;
+  font-size: 1.6rem;
+}
+a.back {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.btn.outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  text-transform: uppercase;
+}
+.btn.outline:hover {
+  background: rgba(56, 189, 248, 0.12);
+}
+.card {
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
+}
+label {
+  display: block;
+  margin: 0.25rem 0 0.5rem;
+  color: var(--muted);
+}
+select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: #e5e7eb;
+  outline: none;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.results {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.card-sm {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #0f172a;
+}
+.card-sm h3 {
+  margin: 0.1rem 0 0.3rem;
+  font-size: 1rem;
+}
+.error {
+  color: #fca5a5;
+  margin-top: 0.5rem;
+}
+.contenedorPrincipal {
+  width: 80%;
+  margin: 20px auto;
+}
+/*imagen perfil*/
+.imagenPerfil {
+  margin: 2rem auto;
+  /* border: 1px solid red; */
+  border-radius: 30px;
+  width: 170px;
+  height: 170px;
+  position: relative;
+}
+.btn_editar_img img {
+  /* margin-top: 10px; */
+  /* margin: auto; */
+  width: 40px;
+}
+/*Img de perfil todo el camino a cambiarla */
+.imagenPerfil {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.foto_perfil {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 2px solid #4caf50; */
+}
+
+.btn_editar_img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--card2);
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn_editar_img:hover {
+  background-color: var(--card2);
+}
+
+/**/
+.contenedorPrincipal {
+  height: 70vh;
+}
+
+.contenedorPrincipal h1 {
+  text-align: center;
+  color: var(--text);
+  margin: auto;
+  margin-bottom: 30px;
+}
+form {
+  width: 20%;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #28408f;
+  /* outline: none; */
+}
+
+.btn-guardar {
+  width: 100%;
+  /* background-color: var(--card2); */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-guardar:hover {
+  background-color: #28408f;
+}
+
+#mensaje {
+  text-align: center;
+  margin-top: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+/**/
+
+.div_btn_eliminar {
+  margin: auto;
+  text-align: center;
+}
+
+.btn_eliminar {
+  color: red;
+  background: rgba(255, 0, 0, 0.189);
+  border: 1px solid red;
+  margin-bottom: 0;
+}

@@ -58,8 +58,12 @@ form.addEventListener('submit', async (e)=>{
   if(mode==='login' && !password){ msgEl.textContent='Ingresá tu contraseña.'; return; }
 
   try{
-    if(mode==='signup') await Auth.signup(email, password);
-    else await Auth.login(email, password);
+    let data;
+    if(mode==='signup') data= await Auth.signup(email, password);
+    else data=await Auth.login(email, password);
+    //Guardado del token queridaaaaaa!
+    localStorage.setItem("token", data.token);
+
     window.location.href='index.html';
   }catch(err){ msgEl.textContent = err.message || 'Ocurrió un error'; }
 });

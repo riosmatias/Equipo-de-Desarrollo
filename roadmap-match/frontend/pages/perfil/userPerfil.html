@@ -18,51 +18,128 @@
     </header>
 
     <div class="contenedorPrincipal">
-         <h1>Configuración de Perfil</h1>
+      <h1>Configuración de Perfil</h1>
 
-         <div class="imagenPerfil">
-
-            <div class="btn_editar_img">
-                <img src="../../src/img/icons8-editar-32.png" alt="">
-            </div>
-         </div>
-    <form id="profile-form">
-        <div>
-
-            <div class="form-group">
-                <label for="nickname">Nombre de usuario (nickname)</label>
-                <input type="text" id="nickname" name="nickname" placeholder="Ej: EriCode23" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="nombre">Primer nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Erika" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Ej: Fragomeni" required>
-            </div>
-            <div class="form-group">
-                <label for="email">email</label>
-                <input type="text" id="email" name="email" placeholder="Ej: efragomeni@mail.com" required>
-            </div>
-            
+      <div class="imagenPerfil">
+        <img
+          id="previewImagenPerfil"
+          src="../../src/img/icons8-usuario-48.png"
+          alt="Foto de perfil"
+          class="foto_perfil"
+        />
+        <div class="btn_editar_img" id="btnEditarImg">
+          <img src="../../src/img/icons8-editar-32.png" alt="Editar imagen" />
         </div>
-      <button type="submit" class="btn outline btn-guardar">Guardar cambios</button>
-    </form>
+        <input
+          type="file"
+          id="inputImagenPerfil"
+          accept="image/*"
+          style="display: none"
+        />
+      </div>
 
-    <p id="mensaje"></p>
-  </div>
-<br><br><br>
-<div class="div_btn_eliminar"> 
-    <button class="btn  btn_eliminar">ELIMINAR PERFIL</button>
-</div>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="nickname">Nombre de usuario (nickname)</label>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            placeholder="Ej: EriCode23"
+          />
+        </div>
 
+        <div class="form-group">
+          <label for="nombre">Primer nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Eri" />
+        </div>
 
-</div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Ej: Fragomeni"
+          />
+        </div>
 
-<script src="../../scripts/perfil.js"></script>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ej: efragomeni@mail.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Nueva contraseña</label>
+          <input
+            class="pass"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="********"
+          />
+          <button
+            type="button"
+            class="show-hide"
+            onclick="togglePassword('password')"
+          >
+            👁️‍🗨️
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="password2">Repetir contraseña</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            placeholder="********"
+          />
+          <button
+            type="button"
+            class="show-hide"
+            onclick="togglePassword('password2')"
+          >
+            👁️‍🗨️
+          </button>
+        </div>
+
+        <button type="submit" class="btn outline btn-guardar">
+          Guardar cambios
+        </button>
+      </form>
+
+      <p id="mensaje"></p>
+    </div>
+
+    <div class="div_btn_eliminar">
+      <button class="btn btn_eliminar">ELIMINAR PERFIL</button>
+    </div>
+    <!-- Modal eliminar perfil -->
+    <div id="modalEliminar" class="modal">
+      <div class="modal-content">
+        <p>
+          ⚠️ Esta acción es irreversible. ¿Estás seguro que quieres eliminar tu
+          perfil?
+        </p>
+        <div class="modal-buttons">
+          <button id="btnConfirmEliminar" class="btn outline">
+            Sí, eliminar
+          </button>
+          <button id="btnCancelEliminar" class="btn outline">
+            No, cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../../auth.js"></script>
+    <script src="../../scripts/perfil.js"></script>
+
     <footer>
       <small>&copy; <span id="year"></span> Roadmap &amp; match</small>
     </footer>
