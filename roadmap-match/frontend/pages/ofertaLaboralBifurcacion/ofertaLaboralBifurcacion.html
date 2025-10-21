@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ofertaLaboralBifurcacion.css" />
+    <title>ofertaLaboral</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div>
+          <a class="back" onclick="history.back(); return false">← Volver</a>
+          <h1>💼 Ofertas laborales</h1>
+        </div>
+        <div class="header-right">
+          <div class="buttons-header">
+            <button id="logoutBtn" class="btn-outline btn-header">
+              CERRAR SESIÓN
+            </button>
+            <button
+              class="btn-outline btn-header"
+              onclick="location.href='../perfil/userPerfil.html'"
+            >
+              <img
+                class="imagen_user"
+                src="../../src/img/icons8-usuario-48.png"
+                alt="imagen usuario"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="contenedor-principal">
+      <div class="card">
+        <h1>Ver ofertas activas</h1>
+        <p>Acá podes ver las últimas ofertas laborales.</p>
+        <button
+          class="btn btn-outline"
+          onclick="location.href='../bolsaTrabajo/bolsaTrabajo.html'"
+        >
+          IR
+        </button>
+      </div>
+      <div class="card">
+        <h1>Subir una oferta</h1>
+        <p>Acá podes subir una búsqueda laboral.</p>
+        <button class="btn btn-outline">IR</button>
+      </div>
+    </div>
+    <script src="../../auth.js"></script>
+
+    <!-- Llamo a perfil como "trampa para no tener que construir un script para esta pagina solo para poder cerrar sesion desde aca, es que sino me falta el auth y no se puede cerrar..." -->
+    <script src="../../scripts/perfil.js"></script>
+
+  </body>
+</html>

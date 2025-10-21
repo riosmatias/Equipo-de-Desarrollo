@@ -44,6 +44,7 @@ h1 {
 .header-stats {
   color: var(--muted);
   font-size: 0.9rem;
+  display: none;
 }
 
 .wrap {
@@ -153,6 +154,8 @@ select:focus {
   text-align: center;
   gap: 0.5rem;
 }
+
+
 .jobs-header {
   display: flex;
   justify-content: space-between;
