@@ -11,7 +11,7 @@ const btnEditarImg = document.getElementById("btnEditarImg");
 const form = document.getElementById("profile-form");
 const mensaje = document.getElementById("mensaje");
 
-/* --- ABRIR EXPLORADOR AL CLICAR EL LÁPIZ --- */
+/* --- ABRIR EXPLORADOR AL APRETAR EL LÁPIZ --- */
 btnEditarImg.addEventListener("click", () => {
   inputImagen.click();
 });

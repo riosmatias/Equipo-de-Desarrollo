@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="bolsaTrabajo.css" />
+    <title>Bolsa de Trabajo</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div>
+          <a class="back" onclick="history.back(); return false">← Volver</a>
+          <h1>💼 Bolsa de Trabajo</h1>
+        </div>
+        <div class="header-right">
+          <div class="buttons-header">
+            <button id="logoutBtn" class="btn-outline btn-header">
+              CERRAR SESIÓN
+            </button>
+            <button
+              class="btn-outline btn-header"
+              onclick="location.href='../perfil/userPerfil.html'"
+            >
+              <img
+                class="imagen_user"
+                src="../../src/img/icons8-usuario-48.png"
+                alt="imagen usuario"
+              />
+            </button>
+          </div>
+          <div class="header-stats">
+            <span id="totalJobs">0</span> empleos disponibles
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <div class="search-section">
+        <h2 class="search-title">Encuentra tu próximo empleo</h2>
+        <div class="search-grid">
+          <div class="form-group">
+            <label for="searchInput">Buscar por título o empresa</label>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Ej: Desarrollador, Google..."
+            />
+          </div>
+          <div class="form-group">
+            <label for="locationFilter">Ubicación</label>
+            <select id="locationFilter">
+              <option value="">Todas las ubicaciones</option>
+              <option value="Ciudad de Buenos Aires">
+                Ciudad de Buenos Aires
+              </option>
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Remoto">Remoto</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="typeFilter">Tipo de empleo</label>
+            <select id="typeFilter">
+              <option value="">Todos los tipos</option>
+              <option value="Tiempo Completo">Tiempo Completo</option>
+              <option value="Medio Tiempo">Medio Tiempo</option>
+              <option value="Freelance">Freelance</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" onclick="filterJobs()">Buscar</button>
+        </div>
+      </div>
+
+      <div class="jobs-header">
+        <div class="jobs-count" id="jobsCount">Mostrando 0 empleos</div>
+        <select class="sort-select" id="sortSelect" onchange="sortJobs()">
+          <option value="older">Más antiguos</option>
+          <option value="recent">Más recientes</option>
+          <option value="salary-high">Salario: Mayor a menor</option>
+          <option value="salary-low">Salario: Menor a mayor</option>
+        </select>
+      </div>
+
+      <div class="jobs-grid" id="jobsGrid">
+        <!-- Aca se ejecuta el script. -->
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Roadmap &amp; match.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="jobModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 id="modalTitle" style="margin: 0 0 0.5rem 0"></h2>
+            <div
+              id="modalCompany"
+              style="color: var(--primary); font-weight: 500"
+            ></div>
+          </div>
+          <button class="close-modal" onclick="closeModal()">&times;</button>
+        </div>
+        <div id="modalBody"></div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" onclick="closeModal()">Cerrar</button>
+          <button class="btn btn-primary" onclick="applyJob()">
+            Aplicar ahora
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../scripts/bolsaTrabajo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "title": "Desarrollador Full Stack Senior",
+    "company": "TechCorp Argentina",
+    "location": "Ciudad de Buenos Aires",
+    "salary": "$450.000 - $600.000",
+    "type": "Tiempo Completo",
+    "mode": "hibrido",
+    "description": "Buscamos un desarrollador full stack con experiencia en React y Node.js para unirse a nuestro equipo de innovación.",
+    "tags": ["React", "Node.js", "MongoDB", "AWS"],
+    "posted": "Hace 2 semanas",
+    "requirements": [
+      "5+ años de experiencia",
+      "Inglés avanzado",
+      "Experiencia con microservicios"
+    ],
+    "benefits": [
+      "Seguro médico",
+      "Home office",
+      "Bonos trimestrales",
+      "Capacitación continua"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Diseñador UX/UI",
+    "company": "Creative Studio",
+    "location": "Buenos Aires",
+    "salary": "$300.000 - $400.000",
+    "type": "Medio Tiempo",
+    "mode": "presencial",
+    "description": "Únete a nuestro equipo creativo para diseñar experiencias digitales excepcionales para clientes internacionales.",
+    "tags": ["Figma", "Adobe XD", "Prototyping", "User Research"],
+    "posted": "Hace 10 días",
+    "requirements": [
+      "3+ años de experiencia",
+      "Portfolio requerido",
+      "Conocimiento de Design Systems"
+    ],
+    "benefits": [
+      "Horario flexible",
+      "Días de vacaciones adicionales",
+      "Equipo Mac"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Data Scientist",
+    "company": "Analytics Pro",
+    "location": "Remoto",
+    "salary": "$700.000 - $800.000",
+    "type": "Tiempo Completo",
+    "mode": "remoto",
+    "description": "Buscamos un científico de datos para trabajar en proyectos de machine learning y análisis predictivo.",
+    "tags": ["Python", "TensorFlow", "SQL", "Machine Learning"],
+    "posted": "Hace 8 días",
+    "requirements": [
+      "Maestría en Ciencias de Datos o similar",
+      "Experiencia con modelos predictivos",
+      "Inglés fluido"
+    ],
+    "benefits": [
+      "100% remoto",
+      "Equipo de trabajo",
+      "Conferencias internacionales",
+      "Stock options"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Gerente de Marketing Digital",
+    "company": "Marketing Solutions",
+    "location": "Mendoza",
+    "salary": "$350.000 - $500.000",
+    "type": "Tiempo Completo",
+    "mode": "hibrido",
+    "description": "Lidera estrategias de marketing digital para marcas reconocidas a nivel nacional e internacional.",
+    "tags": ["SEO", "SEM", "Google Analytics", "Social Media"],
+    "posted": "Hace 6 días",
+    "requirements": [
+      "4+ años liderando equipos",
+      "Certificaciones en Google Ads",
+      "Experiencia en e-commerce"
+    ],
+    "benefits": [
+      "Bonos por desempeño",
+      "Seguro de gastos médicos mayores",
+      "Días de home office"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Desarrollador Mobile (iOS/Android)",
+    "company": "AppDev Studio",
+    "location": "Ciudad de Buenos Aires",
+    "salary": "$400.000 - $550.000",
+    "type": "Tiempo Completo",
+    "mode": "presencial",
+    "description": "Desarrolla aplicaciones móviles innovadoras usando las últimas tecnologías para iOS y Android.",
+    "tags": ["Swift", "Kotlin", "React Native", "Flutter"],
+    "posted": "Hace 6 días",
+    "requirements": [
+      "Apps publicadas en stores",
+      "Conocimiento de CI/CD",
+      "Experiencia con APIs REST"
+    ],
+    "benefits": [
+      "Capacitación en nuevas tecnologías",
+      "Seguro médico",
+      "Vales de despensa"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Contador Público",
+    "company": "Finanzas Corporativas",
+    "location": "Buenos Aires",
+    "salary": "$400.000 - $700.000",
+    "type": "Tiempo Completo",
+    "mode": "presencial",
+    "description": "Responsable de la contabilidad general, declaraciones fiscales y reportes financieros de la empresa.",
+    "tags": ["Contabilidad", "SAT", "Excel", "Fiscal"],
+    "posted": "Hace 4 días",
+    "requirements": [
+      "Título y cédula profesional",
+      "Experiencia con CONTPAQi",
+      "Conocimiento fiscal actualizado"
+    ],
+    "benefits": ["Prestaciones de ley", "Aguinaldo superior", "Fondo de ahorro"]
+  },
+  {
+    "id": 7,
+    "title": "Copywriter Creativo",
+    "company": "Agencia Creativa 360",
+    "location": "Remoto",
+    "salary": "$200.000 - $300.000",
+    "type": "Freelance",
+    "mode": "remoto",
+    "description": "Crea contenido persuasivo y creativo para campañas publicitarias de marcas líderes.",
+    "tags": ["Copywriting", "Content Marketing", "Storytelling", "SEO"],
+    "posted": "Hace 2 días",
+    "requirements": [
+      "Portfolio de trabajos anteriores",
+      "Excelente redacción",
+      "Creatividad comprobable"
+    ],
+    "benefits": ["Horario flexible", "Proyectos variados", "Pago por proyecto"]
+  },
+  {
+    "id": 8,
+    "title": "Ingeniero DevOps",
+    "company": "CloudTech Solutions",
+    "location": "Mendoza",
+    "salary": "$2.100.000 - $2.300.000",
+    "type": "Tiempo Completo",
+    "mode": "hibrido",
+    "description": "Gestiona infraestructura cloud, automatización de despliegues y monitoreo de sistemas críticos.",
+    "tags": ["AWS", "Docker", "Kubernetes", "Terraform"],
+    "posted": "Hace 1 día",
+    "requirements": [
+      "Certificación AWS",
+      "Experiencia con CI/CD",
+      "Scripting en Python/Bash"
+    ],
+    "benefits": [
+      "Certificaciones pagadas",
+      "Bonos anuales",
+      "Seguro médico familiar"
+    ]
+  }
+]
