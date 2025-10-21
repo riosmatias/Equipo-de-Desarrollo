@@ -1,3 +1,9 @@
+// Cerrar sesión.... esto debe ir al nav bar ¬¬
+document.getElementById("logoutBtn")?.addEventListener("click", () => {
+  Auth.logout();
+  window.location.assign("../../login.html");
+});
+
 let jobsData = [];
 let filteredJobs = [];
 
